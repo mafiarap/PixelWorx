@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue chez PixelWorx</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        /* Centrer le logo en bas */
+        .logo-container {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .logo {
+            max-width: 150px; /* Ajuster la taille du logo */
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.getElementById('hero');
+            const servicesSection = document.getElementById('services');
+            const contactSection = document.getElementById('contact');
+
+            servicesSection.classList.add('hidden');
+            contactSection.classList.add('hidden');
+
+            document.querySelector('nav').addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href').substring(1);
+
+                    heroSection.classList.add('hidden');
+                    servicesSection.classList.add('hidden');
+                    contactSection.classList.add('hidden');
+
+                    document.getElementById(targetId).classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>PixelWorx</h1>
+        <nav>
+            <a href="#hero">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <h2>Concevez vos rêves avec PixelWorx</h2>
+        <p>Nous créons des expériences numériques uniques pour donner vie à vos projets.</p>
+    </section>
+
+    <section id="services">
+        <h2>Nos Services</h2>
+        <p style="text-align: center;">Chez PixelWorx, nous offrons des solutions sur mesure pour répondre à vos besoins en développement web, gestion de bases de données et création de bots personnalisés.</p>
+        <p style="text-align: center;">Voici quelques-uns de nos services :</p>
+        <ul style="list-style-type: disc; text-align: center; padding-left: 0; display: inline-block;">
+            <li style="text-align: left; margin-bottom: 10px;">Conception de sites web modernes et réactifs</li>
+            <li style="text-align: left; margin-bottom: 10px;">Développement de bases de données</li>
+            <li style="text-align: left; margin-bottom: 10px;">Corriger des sites web</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Envoyez-nous un message et parlons de vos projets !</p>
+        <form action="https://formspree.io/f/mbldrndl" method="POST">
+            <!-- Champ Nom -->
+            <div style="text-align: center; margin-bottom: 15px;">
+                <input type="text" name="name" placeholder="Votre nom" required style="text-align: center;">
+            </div>
+            
+            <!-- Champ Email -->
+            <div style="text-align: center; margin-bottom: 15px;">
+                <input type="email" name="email" placeholder="Votre email" required style="text-align: center;">
+            </div>
+            
+            <!-- Champ Message -->
+            <div style="text-align: center; margin-bottom: 15px;">
+                <textarea name="message" placeholder="Votre message" rows="5" required style="text-align: center;"></textarea>
+            </div>
+            
+            <div style="text-align: center;">
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+        <div class="contact-info">
+            <p>Vous pouvez également nous joindre directement :</p>
+            <p>Téléphone : <a href="tel:+123456789">+1 234 567 89</a></p>
+            <p>Facebook : <a href="https://facebook.com/PixelWorx" target="_blank">PixelWorx</a></p>
+        </div>
+    </section>
+    
+
+    <footer>
+        <!-- Logo centré en bas -->
+        <div class="logo-container">
+            <img src="img/logoo.png" alt="Logo" class="logo"><img>
+        </div>
+        <p>&copy; 2025 PixelWorx - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
