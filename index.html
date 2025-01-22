@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue chez PixelWorx</title>
@@ -77,29 +78,29 @@
         <h2>Contactez-nous</h2>
         <p>Envoyez-nous un message et parlons de vos projets !</p>
         <form action="https://formspree.io/f/mbldrndl" method="POST">
-           
             <div style="text-align: center; margin-bottom: 15px;">
-                <input type="text" name="name" placeholder="Votre nom" required style="text-align: center;">
+                <label for="name">Nom :</label><br>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required style="text-align: center;">
             </div>
-            
-            
             <div style="text-align: center; margin-bottom: 15px;">
-                <input type="email" name="email" placeholder="Votre email" required style="text-align: center;">
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email" placeholder="Votre email" required style="text-align: center;">
             </div>
-            
-            
             <div style="text-align: center; margin-bottom: 15px;">
-                <textarea name="message" placeholder="Votre message" rows="5" required style="text-align: center;"></textarea>
+                <label for="message">Message :</label><br>
+                <textarea id="message" name="message" placeholder="Votre message" rows="5" required style="text-align: center;"></textarea>
             </div>
-            
+            <div class="g-recaptcha" data-sitekey="6Lc5I8AqAAAAAKi3aA_cefskz5Vm9rnqMg0P2krh"></div>
             <div style="text-align: center;">
                 <button type="submit">Envoyer</button>
             </div>
         </form>
+        
+    </div>
+        <input type="hidden" name="_subject" value="Nouveau message depuis votre site">
         <div class="contact-info">
             <p>Vous pouvez également nous joindre directement :</p>
             
-           
             <div class="contact-details">
                 <img src="whatsapp.png" alt="Icône WhatsApp" class="social-icon">
                 <span>Appelez-nous au : <a href="tel:+1234567890">06.67.43.73.50</a></span>
